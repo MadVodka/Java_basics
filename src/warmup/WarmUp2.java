@@ -5,7 +5,7 @@ public class WarmUp2 {
     public String stringTimes(String str, int n) {
         StringBuilder result = new StringBuilder();
 
-        for (int i=0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             result.append(str);
         }
         return result.toString();
@@ -13,8 +13,8 @@ public class WarmUp2 {
 
     public String frontTimes(String str, int n) {
         StringBuilder result = new StringBuilder();
-        for (int i=0; i<n; i++) {
-            if (str.length()>3) {
+        for (int i = 0; i < n; i++) {
+            if (str.length() > 3) {
                 result.append(str, 0, 3);
             } else {
                 result.append(str);
@@ -26,9 +26,9 @@ public class WarmUp2 {
 
     int countXX(String str) {
         int count = 0;
-        for (int i=0; i<str.length()-1; i++) {
-            if (str.charAt(i) == 'x' && str.charAt(i+1) == 'x' ) {
-                count ++;
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.charAt(i) == 'x' && str.charAt(i + 1) == 'x') {
+                count++;
             }
         }
         return count;
@@ -45,7 +45,7 @@ public class WarmUp2 {
 
     public String stringBits(String str) {
         StringBuilder result = new StringBuilder();
-        for (int i=0; i<str.length(); i+=2) {
+        for (int i = 0; i < str.length(); i += 2) {
             result.append(str.charAt(i));
         }
         return result.toString();
@@ -53,7 +53,7 @@ public class WarmUp2 {
 
     public String stringSplosion(String str) {
         StringBuilder result = new StringBuilder();
-        for (int i = 0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
 
             result.append(str.substring(0, i + 1));
         }
@@ -62,7 +62,7 @@ public class WarmUp2 {
 
     public int last2(String str) {
         int count = 0;
-        for (int i = 0; i<str.length()-2; i++) {
+        for (int i = 0; i < str.length() - 2; i++) {
             if (str.substring(str.length() - 2).equals(str.substring(i, i + 2))) {
                 count++;
             }
@@ -84,7 +84,7 @@ public class WarmUp2 {
         int end = nums.length;
         if (end > 4) end = 4;
 
-        for (int i=0; i<end; i++) {
+        for (int i = 0; i < end; i++) {
             if (nums[i] == 9) return true;
         }
 
@@ -92,8 +92,8 @@ public class WarmUp2 {
     }
 
     public boolean array123(int[] nums) {
-        for (int i=0; i<nums.length-1; i++) {
-            if (nums.length>2 && nums[i] == 1 && nums[i+1] == 2 && nums[i+2] == 3) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums.length > 2 && nums[i] == 1 && nums[i + 1] == 2 && nums[i + 2] == 3) {
                 return true;
             }
 
@@ -107,8 +107,8 @@ public class WarmUp2 {
         int cst = Math.min(lengthA, lengthB);
 
         int count = 0;
-        for (int i=0; i<(cst-1); i++) {
-            if (a.substring(i, i+2).equals(b.substring(i, i+2))) {
+        for (int i = 0; i < (cst - 1); i++) {
+            if (a.substring(i, i + 2).equals(b.substring(i, i + 2))) {
                 count++;
             }
         }
@@ -117,26 +117,27 @@ public class WarmUp2 {
 
     public String stringX(String str) {
         StringBuilder middle = new StringBuilder();
-        if (str.length()<2) return str;
-        for (int i = 1; i<str.length()-1; i++) {
-            if (!str.substring(i, i+1).equals("x")) {
+        if (str.length() < 2) return str;
+        for (int i = 1; i < str.length() - 1; i++) {
+            if (!str.substring(i, i + 1).equals("x")) {
                 middle.append(str, i, i + 1);
             }
         }
-        return str.substring(0, 1) + middle + str.substring(str.length()-1);
+        return str.substring(0, 1) + middle + str.substring(str.length() - 1);
     }
 
     public String altPairs(String str) {
         StringBuilder result = new StringBuilder();
         String tail = "";
-        if (str.length()<3) return str;
-        for (int i = 0; i<str.length(); i=i+4) {
-            if (i==str.length()-1) {
-                tail = str.substring(str.length()-1);}
-            else {
-                result.append(str, i, i + 2);}
+        if (str.length() < 3) return str;
+        for (int i = 0; i < str.length(); i = i + 4) {
+            if (i == str.length() - 1) {
+                tail = str.substring(str.length() - 1);
+            } else {
+                result.append(str, i, i + 2);
+            }
         }
-        return result+tail;
+        return result + tail;
     }
 
     public String stringYak(String str) {
@@ -145,8 +146,8 @@ public class WarmUp2 {
 
     public int array667(int[] nums) {
         int count = 0;
-        for (int i = 0; i<nums.length-1; i++) {
-            if (nums[i]==6 && (nums[i+1]==6 || nums[i+1]==7)) {
+        for (int i = 0; i < nums.length - 1; i++) {
+            if (nums[i] == 6 && (nums[i + 1] == 6 || nums[i + 1] == 7)) {
                 count++;
             }
         }
@@ -155,8 +156,8 @@ public class WarmUp2 {
 
     public boolean noTriples(int[] nums) {
         boolean time = true;
-        for (int i=0; i<nums.length-2; i++) {
-            if (nums[i]==nums[i+1] && nums[i]==nums[i+2]) {
+        for (int i = 0; i < nums.length - 2; i++) {
+            if (nums[i] == nums[i + 1] && nums[i] == nums[i + 2]) {
                 time = false;
             }
         }

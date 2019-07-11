@@ -14,16 +14,15 @@ public class WarmUp1 {
         if (a != b) {
             return a + b;
         } else {
-            return 2*(a + b);
+            return 2 * (a + b);
         }
     }
 
     public int diff21(int n) {
         if (n <= 21) {
             return 21 - n;
-        }
-        else {
-            return 2*(n-21);
+        } else {
+            return 2 * (n - 21);
         }
     }
 
@@ -32,7 +31,7 @@ public class WarmUp1 {
     }
 
     public boolean makes10(int a, int b) {
-        if (a == 10 || b == 10){
+        if (a == 10 || b == 10) {
             return true;
         }
         return a + b == 10;
@@ -46,7 +45,7 @@ public class WarmUp1 {
     }
 
     public boolean posNeg(int a, int b, boolean negative) {
-        if (!negative && ((a<0 && b>0) || (a>0 && b<0))) {
+        if (!negative && ((a < 0 && b > 0) || (a > 0 && b < 0))) {
             return true;
         }
         return negative && a < 0 && b < 0;
@@ -57,13 +56,13 @@ public class WarmUp1 {
             return str;
         } else {
             String N = "not ";
-            return N+str;
+            return N + str;
         }
     }
 
     public String missingChar(String str, int n) {
         String front = str.substring(0, n);
-        String back = str.substring(n+1);
+        String back = str.substring(n + 1);
         return front + back;
     }
 
@@ -71,7 +70,7 @@ public class WarmUp1 {
         if (str.length() == 0) {
             return str;
         } else {
-            int A = str.length()-1;
+            int A = str.length() - 1;
             char[] arr = str.toCharArray();
             char first = arr[0];
             arr[0] = arr[A];
@@ -81,7 +80,7 @@ public class WarmUp1 {
     }
 
     public String front3(String str) {
-        if (str.length() > 3 ) {
+        if (str.length() > 3) {
             String substr = str.substring(0, 3);
             return substr + substr + substr;
         } else {
@@ -90,7 +89,7 @@ public class WarmUp1 {
     }
 
     public String backAround(String str) {
-        int last = str.length()-1;
+        int last = str.length() - 1;
         char add = str.charAt(last);
         return add + str + add;
     }
@@ -103,8 +102,7 @@ public class WarmUp1 {
         if (str.length() > 2) {
             String add = str.substring(0, 2);
             return add + str + add;
-        }
-        else {
+        } else {
             return str + str + str;
         }
     }
@@ -135,7 +133,7 @@ public class WarmUp1 {
 
     public String delDel(String str) {
         String RMV = "del";
-        if (str.length()>=4 && str.substring(1, 4).equals(RMV)) {
+        if (str.length() >= 4 && str.substring(1, 4).equals(RMV)) {
             return str.substring(0, 1) + str.substring(4);
         } else {
             return str;
@@ -149,10 +147,10 @@ public class WarmUp1 {
     public String startOz(String str) {
 
         String result = "";
-        if (str.length()>0 && str.charAt(0) == 'o') {
+        if (str.length() > 0 && str.charAt(0) == 'o') {
             result = result + str.charAt(0);
         }
-        if (str.length()>1 && str.charAt(1) == 'z') {
+        if (str.length() > 1 && str.charAt(1) == 'z') {
             result = result + str.charAt(1);
         }
         return result;
@@ -161,7 +159,7 @@ public class WarmUp1 {
     public int intMax(int a, int b, int c) {
         if (a > b && a > c) {
             return a;
-        } else if (b>c) {
+        } else if (b > c) {
             return b;
         } else {
             return c;
@@ -169,10 +167,9 @@ public class WarmUp1 {
     }
 
     public int close10(int a, int b) {
-        if (Math.abs((a-10)) == Math.abs((b-10))) {
+        if (Math.abs((a - 10)) == Math.abs((b - 10))) {
             return 0;
-        } else
-        if (Math.abs((a-10))>Math.abs((b-10))) {
+        } else if (Math.abs((a - 10)) > Math.abs((b - 10))) {
             return b;
         } else {
             return a;
@@ -181,21 +178,21 @@ public class WarmUp1 {
     }
 
     public boolean in3050(int a, int b) {
-        if (a>=30 && a<=40 && b>=30 && b<=40) {
+        if (a >= 30 && a <= 40 && b >= 30 && b <= 40) {
             return true;
         }
         return a >= 40 && a <= 50 && b >= 40 && b <= 50;
     }
 
     public int max1020(int a, int b) {
-        if (a>=10 && a<=20 && b>=10 && b<=20) {
-            if (a>b) {
+        if (a >= 10 && a <= 20 && b >= 10 && b <= 20) {
+            if (a > b) {
                 return a;
             } else {
                 return b;
             }
         }
-        if ((a<10 || a>20) && (b<10 || b>20)) {
+        if ((a < 10 || a > 20) && (b < 10 || b > 20)) {
             return 0;
         }
         if (a >= 10 && a <= 20) {
@@ -207,7 +204,7 @@ public class WarmUp1 {
 
     public boolean stringE(String str) {
         StringBuilder tmp = new StringBuilder();
-        for (int i=0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             if (str.charAt(i) == 'e') {
                 tmp.append('e');
             }

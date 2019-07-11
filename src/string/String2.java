@@ -4,7 +4,7 @@ public class String2 {
 
     public String doubleChar(String str) {
         StringBuilder dChar = new StringBuilder();
-        for (int i = 0; i<str.length(); i++) {
+        for (int i = 0; i < str.length(); i++) {
             dChar.append(str.charAt(i)).append(str.charAt(i));
         }
         return dChar.toString();
@@ -12,8 +12,8 @@ public class String2 {
 
     public int countHi(String str) {
         int count = 0;
-        for (int i=0; i<str.length()-1; i++) {
-            if (str.substring(i, i+2).equals("hi")) {
+        for (int i = 0; i < str.length() - 1; i++) {
+            if (str.substring(i, i + 2).equals("hi")) {
                 count++;
             }
         }
@@ -23,11 +23,11 @@ public class String2 {
     public boolean catDog(String str) {
         int countCat = 0;
         int countDog = 0;
-        for (int i=0; i<str.length()-2; i++) {
-            if (str.substring(i, i+3).equals("cat")) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            if (str.substring(i, i + 3).equals("cat")) {
                 countCat++;
             }
-            if (str.substring(i, i+3).equals("dog")) {
+            if (str.substring(i, i + 3).equals("dog")) {
                 countDog++;
             }
         }
@@ -36,8 +36,8 @@ public class String2 {
 
     public int countCode(String str) {
         int count = 0;
-        for (int i=0; i<str.length()-3; i++) {
-            if (str.substring(i, i+2).equals("co") && str.charAt(i+3)=='e') {
+        for (int i = 0; i < str.length() - 3; i++) {
+            if (str.substring(i, i + 2).equals("co") && str.charAt(i + 3) == 'e') {
                 count++;
             }
         }
@@ -58,9 +58,9 @@ public class String2 {
 
     public boolean bobThere(String str) {
 
-        for(int i=0; i<str.length()-2; i++) {
-            String sub = str.substring(i, i+3);
-            if (sub.startsWith("b")&&sub.endsWith("b")) {
+        for (int i = 0; i < str.length() - 2; i++) {
+            String sub = str.substring(i, i + 3);
+            if (sub.startsWith("b") && sub.endsWith("b")) {
                 return true;
             }
         }
@@ -76,12 +76,12 @@ public class String2 {
     public String mixString(String a, String b) {
         int length = Math.max(a.length(), b.length());
         String mixString = "";
-        for (int i=0; i<length; i++) {
-            if (i<a.length()) {
+        for (int i = 0; i < length; i++) {
+            if (i < a.length()) {
                 mixString = mixString.concat(String.valueOf(a.charAt(i)));
             }
 
-            if (i<b.length()) {
+            if (i < b.length()) {
                 mixString = mixString.concat(String.valueOf(b.charAt(i)));
             }
         }
@@ -92,8 +92,8 @@ public class String2 {
 
     public String repeatEnd(String str, int n) {
         String repeat = "";
-        for (int i=0; i<n; i++) {
-            repeat = repeat.concat(str.substring(str.length()-n, str.length()));
+        for (int i = 0; i < n; i++) {
+            repeat = repeat.concat(str.substring(str.length() - n, str.length()));
         }
 
         return repeat;
@@ -101,7 +101,7 @@ public class String2 {
 
     public String repeatFront(String str, int n) {
         StringBuilder repeat = new StringBuilder();
-        for (int i = n; i>0; i--) {
+        for (int i = n; i > 0; i--) {
             repeat.append(str, 0, i);
         }
 
@@ -109,13 +109,13 @@ public class String2 {
     }
 
     public String repeatSeparator(String word, String sep, int count) {
-        if (count==0) {
+        if (count == 0) {
             return "";
         }
 
         StringBuilder separated = new StringBuilder(word);
 
-        for (int i=count; i>1; i--) {
+        for (int i = count; i > 1; i--) {
             separated.append(sep).append(word);
         }
 
@@ -129,15 +129,15 @@ public class String2 {
 
     public boolean xyzMiddle(String str) {
         // not done yet
-       return false;
+        return false;
     }
 
     public String getSandwich(String str) {
         int start = str.indexOf("bread");
         int end = str.lastIndexOf("bread");
 
-        if (start!=-1&&end!=-1&&start!=end) {
-            return str.substring(start+5, end);
+        if (start != -1 && end != -1 && start != end) {
+            return str.substring(start + 5, end);
         }
 
         return "";
@@ -149,27 +149,28 @@ public class String2 {
     }
 
     public String oneTwo(String str) {
-        if(str.length()<3) {
+        if (str.length() < 3) {
             return "";
         }
 
-        return str.substring(1, 3) +str.charAt(0)+ oneTwo(str.substring(3));
+        return str.substring(1, 3) + str.charAt(0) + oneTwo(str.substring(3));
     }
 
     public String zipZap(String str) {
         StringBuilder zp = new StringBuilder();
         int i = 0;
-        while (i<str.length()) {
-            if (i+2<str.length()) {
-                if (str.charAt(i)=='z' && str.charAt(i+2)=='p') {
+        while (i < str.length()) {
+            if (i + 2 < str.length()) {
+                if (str.charAt(i) == 'z' && str.charAt(i + 2) == 'p') {
                     zp.append("zp");
-                    i+=3;
+                    i += 3;
                 } else {
                     zp.append(str.charAt(i));
-                    i++;}
+                    i++;
+                }
             } else {
                 zp.append(str.substring(i));
-                i+=2;
+                i += 2;
             }
 
         }
@@ -183,10 +184,10 @@ public class String2 {
 
     public String plusOut(String str, String word) {
         StringBuilder plus = new StringBuilder();
-        for(int i=0; i<str.length();) {
+        for (int i = 0; i < str.length(); ) {
             if (str.substring(i).startsWith(word)) {
                 plus.append(word);
-                i+=word.length();
+                i += word.length();
             } else {
                 plus.append("+");
                 i++;

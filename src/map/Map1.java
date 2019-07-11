@@ -6,7 +6,7 @@ public class Map1 {
 
     public Map<String, String> mapBully(Map<String, String> map) {
         String aValue = map.get("a");
-        if (aValue!=null && !aValue.equals("")) {
+        if (aValue != null && !aValue.equals("")) {
             map.put("b", aValue);
             map.put("a", "");
         }
@@ -15,7 +15,7 @@ public class Map1 {
 
     public Map<String, String> mapShare(Map<String, String> map) {
         String aValue = map.get("a");
-        if (aValue!=null && !aValue.equals("")) {
+        if (aValue != null && !aValue.equals("")) {
             map.put("b", aValue);
         }
 
@@ -34,7 +34,7 @@ public class Map1 {
     }
 
     public Map<String, String> topping1(Map<String, String> map) {
-        if(map.containsKey("ice cream")) {
+        if (map.containsKey("ice cream")) {
             map.put("ice cream", "cherry");
         }
 
@@ -68,7 +68,7 @@ public class Map1 {
     }
 
     public Map<String, String> mapAB2(Map<String, String> map) {
-        if (map.containsKey("a")&&map.containsKey("b")) {
+        if (map.containsKey("a") && map.containsKey("b")) {
             String aValue = map.get("a");
             String bValue = map.get("b");
             if (aValue.equals(bValue)) {
@@ -81,10 +81,10 @@ public class Map1 {
     }
 
     public Map<String, String> mapAB3(Map<String, String> map) {
-        if (map.containsKey("a")&& !map.containsKey("b")) {
+        if (map.containsKey("a") && !map.containsKey("b")) {
             String aValue = map.get("a");
             map.put("b", aValue);
-        } else if (!map.containsKey("a")&&map.containsKey("b")) {
+        } else if (!map.containsKey("a") && map.containsKey("b")) {
             String bValue = map.get("b");
             map.put("a", bValue);
         }
@@ -93,13 +93,13 @@ public class Map1 {
     }
 
     public Map<String, String> mapAB4(Map<String, String> map) {
-        if (map.containsKey("a")&&map.containsKey("b")) {
+        if (map.containsKey("a") && map.containsKey("b")) {
             int aLength = map.get("a").length();
             int bLength = map.get("b").length();
 
-            if (aLength>bLength) {
+            if (aLength > bLength) {
                 map.put("c", map.get("a"));
-            } else if (aLength==bLength) {
+            } else if (aLength == bLength) {
                 map.put("a", "");
                 map.put("b", "");
             } else {

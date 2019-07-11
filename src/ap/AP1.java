@@ -8,13 +8,13 @@ public class AP1 {
     public boolean scoresIncreasing(int[] scores) {
         int scoreBefore = 0;
 
-        for (int i=0; i<scores.length; i++) {
-            if (i==0) {
+        for (int i = 0; i < scores.length; i++) {
+            if (i == 0) {
                 scoreBefore = scores[i];
                 continue;
             }
 
-            if (scores[i]>=scoreBefore) {
+            if (scores[i] >= scoreBefore) {
                 scoreBefore = scores[i];
             } else {
                 return false;
@@ -27,13 +27,13 @@ public class AP1 {
     public boolean scores100(int[] scores) {
         int beforeScore = 0;
 
-        for (int i=0; i<scores.length; i++) {
-            if (i==0) {
+        for (int i = 0; i < scores.length; i++) {
+            if (i == 0) {
                 beforeScore = scores[i];
                 continue;
             }
 
-            if (beforeScore == scores[i] && scores[i]==100) {
+            if (beforeScore == scores[i] && scores[i] == 100) {
                 return true;
             } else {
                 beforeScore = scores[i];
@@ -46,17 +46,17 @@ public class AP1 {
     public boolean scoresClump(int[] scores) {
         int initScore = 0;
 
-        for (int i=0; i<scores.length; i++) {
-            if (i==0) {
+        for (int i = 0; i < scores.length; i++) {
+            if (i == 0) {
                 initScore = scores[i];
                 continue;
             }
 
-            int next = i+1;
-            if (next<scores.length) {
-                boolean dif1 = scores[i]-initScore<=2;
-                boolean dif2 = scores[next] - initScore<=2;
-                boolean dif3 = scores[next] - scores[i]<=2;
+            int next = i + 1;
+            if (next < scores.length) {
+                boolean dif1 = scores[i] - initScore <= 2;
+                boolean dif2 = scores[next] - initScore <= 2;
+                boolean dif3 = scores[next] - scores[i] <= 2;
 
                 if (dif1 && dif2 && dif3) {
                     return true;
@@ -72,7 +72,7 @@ public class AP1 {
     }
 
     public int scoresAverage(int[] scores) {
-        int middle = scores.length/2;
+        int middle = scores.length / 2;
         int firstHalfAvg = average(scores, 0, middle);
         int secondHalfAvg = average(scores, middle, scores.length);
         return Math.max(firstHalfAvg, secondHalfAvg);
@@ -80,17 +80,17 @@ public class AP1 {
 
     int average(int[] scores, int start, int end) {
         int sum = 0;
-        for(int i = start; i<end; i++) {
-            sum+=scores[i];
+        for (int i = start; i < end; i++) {
+            sum += scores[i];
         }
-        return sum/(end-start);
+        return sum / (end - start);
     }
 
 
     public int wordsCount(String[] words, int len) {
         int count = 0;
-        for (String word:words) {
-            if (word.length()==len) {
+        for (String word : words) {
+            if (word.length() == len) {
                 count++;
             }
         }
@@ -100,7 +100,7 @@ public class AP1 {
 
     public String[] wordsFront(String[] words, int n) {
         String[] arr = new String[n];
-        for(int i = 0; i<n; i++) {
+        for (int i = 0; i < n; i++) {
             arr[i] = words[i];
         }
 
@@ -109,8 +109,8 @@ public class AP1 {
 
     public List wordsWithoutList(String[] words, int len) {
         List<String> list = new ArrayList<>();
-        for (String word: words) {
-            if (word.length()!=len) {
+        for (String word : words) {
+            if (word.length() != len) {
                 list.add(word);
             }
         }
@@ -118,22 +118,22 @@ public class AP1 {
     }
 
     public boolean hasOne(int n) {
-        while (n>0) {
-            if (n%10==1) {
+        while (n > 0) {
+            if (n % 10 == 1) {
                 return true;
             }
-            n=n/10;
+            n = n / 10;
         }
         return false;
     }
 
     public boolean dividesSelf(int n) {
         int startValue = n;
-        while(n>0) {
-            if (n%10==0 || startValue%(n%10)!=0) {
+        while (n > 0) {
+            if (n % 10 == 0 || startValue % (n % 10) != 0) {
                 return false;
             }
-            n=n/10;
+            n = n / 10;
         }
         return true;
     }
@@ -158,11 +158,11 @@ public class AP1 {
     public int[] copyEndy(int[] nums, int count) {
         int[] copyEndy = new int[count];
         int countEndy = 0;
-        for (int num: nums) {
+        for (int num : nums) {
             if (isEndy(num)) {
                 copyEndy[countEndy] = num;
                 countEndy++;
-                if (countEndy==copyEndy.length) {
+                if (countEndy == copyEndy.length) {
                     break;
                 }
             }
@@ -171,19 +171,18 @@ public class AP1 {
     }
 
     boolean isEndy(int n) {
-        if ((n>=0 &&n<=10) || (n>=90 &&n<=100)) {
+        if ((n >= 0 && n <= 10) || (n >= 90 && n <= 100)) {
             return true;
         }
         return false;
     }
 
 
-
     public int matchUp(String[] a, String[] b) {
         int count = 0;
-        for (int i=0; i<a.length; i++) {
+        for (int i = 0; i < a.length; i++) {
             if ((!a[i].equals("") && !b[i].equals("")) && (a[i].startsWith(b[i]) || b[i].startsWith(a[i]))) {
-                count ++;
+                count++;
             }
         }
 
@@ -192,12 +191,12 @@ public class AP1 {
 
     public int scoreUp(String[] key, String[] answers) {
         int score = 0;
-        for (int i=0; i<key.length; i++) {
+        for (int i = 0; i < key.length; i++) {
             if (!answers[i].equals("?")) {
                 if (answers[i].equals(key[i])) {
-                    score+=4;
+                    score += 4;
                 } else {
-                    score-=1;
+                    score -= 1;
                 }
             }
         }
@@ -206,14 +205,14 @@ public class AP1 {
 
     public String[] wordsWithout(String[] words, String target) {
         int len = 0;
-        for (String word:words) {
+        for (String word : words) {
             if (!word.equals(target)) {
                 len++;
             }
         }
         String[] without = new String[len];
         int count = 0;
-        for (String word:words) {
+        for (String word : words) {
             if (!word.equals(target)) {
                 without[count] = word;
                 count++;
@@ -224,13 +223,13 @@ public class AP1 {
 
 
     public int scoresSpecial(int[] a, int[] b) {
-        return maxValue(a)+maxValue(b);
+        return maxValue(a) + maxValue(b);
     }
 
     int maxValue(int[] arr) {
         int max = 0;
-        for(int val:arr) {
-            if (val%10==0) {
+        for (int val : arr) {
+            if (val % 10 == 0) {
                 max = Math.max(max, val);
             }
         }
@@ -240,28 +239,28 @@ public class AP1 {
 
     public int sumHeights(int[] heights, int start, int end) {
         int sum = 0;
-        for (int i=start; i<end; i++) {
-            sum+=Math.abs(heights[i]-heights[i+1]);
+        for (int i = start; i < end; i++) {
+            sum += Math.abs(heights[i] - heights[i + 1]);
         }
         return sum;
     }
 
     public int sumHeights2(int[] heights, int start, int end) {
         int sum = 0;
-        for (int i=start; i<end; i++) {
+        for (int i = start; i < end; i++) {
             int multiplier = 1;
-            if (heights[i]<heights[i+1]) {
+            if (heights[i] < heights[i + 1]) {
                 multiplier = 2;
             }
-            sum+=multiplier*Math.abs(heights[i]-heights[i+1]);
+            sum += multiplier * Math.abs(heights[i] - heights[i + 1]);
         }
         return sum;
     }
 
     public int bigHeights(int[] heights, int start, int end) {
         int count = 0;
-        for (int i=start; i<end; i++) {
-            if (Math.abs(heights[i]-heights[i+1])>=5) {
+        for (int i = start; i < end; i++) {
+            if (Math.abs(heights[i] - heights[i + 1]) >= 5) {
                 count++;
             }
         }
@@ -270,15 +269,15 @@ public class AP1 {
 
     public int userCompare(String aName, int aId, String bName, int bId) {
         int result = aName.compareTo(bName);
-        if (result==0) {
-            if (aId>bId) {
+        if (result == 0) {
+            if (aId > bId) {
                 return 1;
-            } else if(aId<bId) {
+            } else if (aId < bId) {
                 return -1;
             } else {
                 return 0;
             }
-        } else if (result>0) {
+        } else if (result > 0) {
             return 1;
         } else {
             return -1;
@@ -291,24 +290,23 @@ public class AP1 {
     }
 
     public int commonTwo(String[] a, String[] b) {
-        int count=0;
-        for (String strA:a) {
+        int count = 0;
+        for (String strA : a) {
             boolean hasAlready = false;
-            for (int i=0; i<b.length; i++) {
+            for (int i = 0; i < b.length; i++) {
                 if (strA.equals(b[i])) {
                     if (!hasAlready) {
                         count++;
-                        hasAlready=true;
+                        hasAlready = true;
                     }
 
-                    b[i]="";
+                    b[i] = "";
                 }
 
             }
         }
         return count;
     }
-
 
 
 }
